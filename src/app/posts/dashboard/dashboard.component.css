@@ -1,0 +1,30 @@
+.container {
+  margin-top: 2%;
+}
+
+.heading {
+  padding: auto;
+  margin-left: 45%;
+  margin-top: 1%;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: 2%;
+  margin-right: 5%;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

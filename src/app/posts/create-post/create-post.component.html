@@ -1,0 +1,33 @@
+<div class="container">
+  <form>
+    <!-- <h2>Create Post</h2> -->
+    <legend>Create Post</legend>
+    <label for="title">UserId</label><br />
+    <input
+      type="number"
+      id="userId"
+      name="userId"
+      [(ngModel)]="postForm.userId"
+    /><br />
+
+    <label for="title">Title</label><br />
+    <input
+      type="text"
+      id="title"
+      name="title"
+      [(ngModel)]="postForm.title"
+    /><br />
+
+    <label for="body">Body</label><br />
+    <input
+      type="text"
+      id="body"
+      name="body"
+      [(ngModel)]="postForm.body"
+    /><br />
+
+    <button type="button" (click)="create()" class="btn btn-info">Submit</button
+    >&nbsp;
+    <a class="btn btn-danger" routerLink="/posts/dashboard">Back</a>
+  </form>
+</div>

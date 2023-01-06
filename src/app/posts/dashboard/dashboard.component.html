@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="heading">
+    <!-- <a class="btn btn-primary" routerLink="/posts/create-post">Create Item</a> -->
+
+    <h3>Post List</h3>
+  </div>
+</div>
+
+<div class="row container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">userId</th>
+        <th scope="col">id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allPosts">
+        <th scope="row">{{ item.userId }}</th>
+        <th scope="row">{{ item.id }}</th>
+        <td scope="row">{{ item.title }}abcx</td>
+        <td scope="row">{{ item.body }}abc</td>
+        <td>
+         <button type="button"> <a class="button" [routerLink]="['/posts/edit', item.id]">Edit</a> </button>
+          &nbsp;
+          <br>
+          <button type="button" (click)="openDeleteModel(item.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">Are sure to delete this item?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-danger" (click)="delete()">
+          Confirm Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
